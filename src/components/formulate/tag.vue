@@ -26,12 +26,10 @@ export default {
     },
     methods:{
         addTag(){
-            let val = this.input_value.trim();
-            console.log(this.context)
-            if (val != "" ) {
-                this.value.push(val);
-                this.input_value = "";
+            if (this.input_value != "" ) {
+                this.value.push(this.input_value.trim());
                 this.context.model = this.value;
+                this.input_value = "";
             }
         },
         removeTag(index){
