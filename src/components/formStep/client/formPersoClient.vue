@@ -1,25 +1,21 @@
 <template>
-    <div>
-        <div class=" column is-half">
-            <FormulateForm v-model="values" :schema="schema" />
-
-        </div>
+  <div>
+      <FormulateForm :schema="schema" v-model="values"/>
 
         <div class="card-content">
             <pre v-text="values" class="md-elevation-3"></pre>
         </div>
-
-    </div>
+  </div>
 </template>
 
 <script>
-import Schema from "../../schemas/FormShema/Account"
+import Schema from "../../../schemas/client/clientAccount"
 export default {
-    name:"FormAccount",
+    name:"formPersoClient",
     data(){
         return{
-            values:{},
             schema:Schema,
+            values:{},
         }
     }
 }

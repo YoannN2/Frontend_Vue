@@ -4,8 +4,8 @@
     <!-- NAVBAR -->
     <nav id="nav" class="navbar">
       <div class="navbar-brand">
-        <router-link class="navbar-item" to="/">
-          <img src="@/assets/logo-horizontal.svg" width="150" height="100">
+        <router-link class="navbar-item" to="/" >
+          <img class="logo" src="@/assets/logo-horizontal.svg" width="300">
         </router-link>
         <div class="navbar-menu">
           <div class="navbar-start">
@@ -25,6 +25,9 @@
                 </router-link>
                 <router-link class="navbar-item" to="/test/tabs">
                   Tabs
+                </router-link>
+                <router-link class="navbar-item" to="/test/skills">
+                  Skills
                 </router-link>
               </div>
             </div>
@@ -62,7 +65,10 @@
     </nav>
 
     <div class="section">
-      <router-view/>
+      <div class="container">
+          <router-view/>
+      </div>
+
     </div>
 
 
@@ -78,6 +84,14 @@
 
 <style>
 @import './assets/Formulate_theme.min.css';
+.logo {
+  scale: 2;
+}
+
+.navbar {
+  height: 100px
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

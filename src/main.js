@@ -28,9 +28,11 @@ import myTextarea from '@/components/formulate/textarea'
 import mySelect from '@/components/formulate/select'
 import myRadio from '@/components/formulate/radio'
 import myCKB from '@/components/formulate/checkbox'
-import myFile from "@/components/formulate/file"
-import myTel from "@/components/formulate/tel"
-import myTag from "@/components/formulate/tag"
+import myFile from '@/components/formulate/file'
+import myTel from '@/components/formulate/tel'
+import myTag from '@/components/formulate/tag'
+
+
 // Custom Slots
 Vue.component('myLabel', myLabel)
 

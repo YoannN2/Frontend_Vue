@@ -3,14 +3,14 @@
     <div class="tabs column is-two-thirds">
       <ul>
         <li v-for="tab in pages" :key="tab.index" @click="activeTab = tab.index" :class="activeTab == tab.index ? 'is-active' : ''" >
-          <a>{{tab.title}}</a>
+          <a @click="test(tab.content)">{{tab.title}}</a>
         </li>
       </ul>
     </div>
     <div class="content">
       <div v-for="tab in pages" :key="tab.index">
         <div v-if="activeTab === tab.index">
-          <component :is="tab.content"></component>
+          <component  @submit="test('je suis appelé la dedans !!!')" :is="tab.content"></component>
         </div>
       </div>
     </div>
@@ -37,6 +37,9 @@ export default {
     }
   },
   methods: {
+    test(val){
+      console.log(val)
+    }
   }
 }
 </script>
