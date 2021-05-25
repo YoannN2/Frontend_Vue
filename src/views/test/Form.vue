@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
     <!-- CARD FORM -->
-    <div class="card column is-4 is-offset-1">
+    <div class="card column is-6 is-offset-1">
 
       <!-- HEADER -->
       <div class="card-header">
@@ -17,7 +17,7 @@
     </div>
 
       <!-- CARD DEBUG -->
-      <div class="card column is-4 is-offset-1">
+      <div class="card column is-3 is-offset-1">
 
         <!-- HEADER -->
         <div class="card-header ">
