@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TableSearch from "@/components/tables/table"
+import TableSearch from "@/components/tables/Table"
 export default {
   name: 'interim',
   components: {

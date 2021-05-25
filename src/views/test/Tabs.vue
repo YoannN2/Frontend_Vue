@@ -1,46 +1,69 @@
 <template>
   <div class="">
     <div class="container">
-      <tabs :pages="mesTabs" :defaultTab="0"/>
-
+      <FormAccount v-if="type_inscription == '' " @inscription="updateInscription($event)"/>
+      <div v-if="type_inscription == 'interimaire'">
+        <tabs :pages="TabsInterim" :defaultTab="0"/>
+      </div>
+      <div v-else-if="type_inscription == 'client'">
+        <tabs :pages="TabsClient" :defaultTab="0"/>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
-
+//STEPPERS
 import tabs from "@/components/custom/tabs"
-import FormAccount from "@/components/formStep/formAccount"
-import FormPerso from "@/components/formStep/formPersonnelle"
-import FormPro from "@/components/formStep/formProfessionnelle"
 
+//ACCOUNT
+import FormAccount from '@/components/formStep/general/formAccount'
+
+//INTERIMAIRE
+import FormPerso from "@/components/formStep/interimaire/formPersonnelle"
+import FormPro from "@/components/formStep/interimaire/formProfessionnelle"
+
+//CLIENT
+import FormClient from '@/components/formStep/client/formPersoClient'
+import FormSociete from "@/components/formStep/client/formSociete"
 export default {
   name: 'Test',
   components: {
-    tabs
+    tabs,
+    FormAccount
   },
   data: () => {
     return {
-      mesTabs: [
+      TabsInterim: [
         {
           index: 0,
-          title: "First Step",
-          content: FormAccount,
-        },
-        {
-          index: 1,
-          title: "Second Step",
+          title: "Personnelle",
           content: FormPerso,
         },
         {
-          index: 2,
-          title: "Third Step",
+          index: 1,
+          title: "Professionnelle",
           content: FormPro,
         },
-      ]
+      ],
+      TabsClient:[
+        {
+          index:0,
+          title:"Personnelle",
+          content:FormClient
+        },
+        {
+          index:1,
+          title:"Societe",
+          content:FormSociete
+        }
+      ],
+      type_inscription:"",
     }
   },
   methods: {
+    updateInscription(value){
+      this.type_inscription = value;
+    }
   }
 }
 </script>

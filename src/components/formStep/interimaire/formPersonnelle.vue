@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Schema from "../../schemas/FormShema/Personnelle"
+import Schema from "../../../schemas/interimaire/Personnelle"
 export default {
   name:"formPerso",
   data(){

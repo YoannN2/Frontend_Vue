@@ -25,6 +25,16 @@ export default[
         validation: "required|confirm"
     },
     {
+        type:"radio",
+        name:"type_inscription",
+        label:"S'inscrire en tant que",
+        validation:'required',
+        options:{
+            client:"Client",
+            interimaire:"Intérimaire",
+        }
+    },
+    {
         type: "submit",
         name: "Envoyez"
     }
