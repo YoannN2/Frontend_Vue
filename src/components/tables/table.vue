@@ -32,8 +32,6 @@
           </footer>
     </div>
 </div>
-
-
   </div>
 </template>
 

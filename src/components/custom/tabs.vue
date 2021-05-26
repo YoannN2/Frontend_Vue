@@ -2,10 +2,10 @@
   <div class="">
     <div class="tabs column is-two-thirds">
       <ul>
-        <li @click="activeTab = 0" :class="activeTab == 0 ? 'is-active' : ''">
+        <li @click="activeTab = 0" :class="{'is-active' :activeTab == 0}">
           <slot name="title1"></slot>
         </li>
-        <li @click="reloadValues <= 1 ? activeTab = 0 : activeTab = 1 " :class="activeTab == 1 ? 'is-active' : '' || setDisabled ? 'disabled' :''">
+        <li @click="activeTab = reloadValues <= 1 ? 0 : 1" :class="{'is-active' :activeTab == 1,'disabled' :setDisabled}">
           <slot name="title2" ></slot>
         </li>
       </ul>
@@ -13,10 +13,14 @@
     <div class="content">
       <div>
         <div v-if="activeTab === 0" >
-          <slot name="content1"  ></slot>
+          <keep-alive>
+            <slot name="content1" ></slot>
+          </keep-alive>
         </div>
         <div v-if="activeTab === 1">
-          <slot name="content2" ></slot>
+          <keep-alive>
+            <slot name="content2" ></slot>
+          </keep-alive>
         </div>
       </div>
     </div>
@@ -27,15 +31,14 @@
 <script>
 export default {
   name: "tabs",
-  props:{
+  props: {
    activeTab: {
     type:Number
    },
   },
   data () {
     return {
-      tabActive:this.activeTab,
-      valuesLength:this.$store.state.values.length,
+      tabActive: this.activeTab,
     }
   },
   methods:{
@@ -44,7 +47,7 @@ export default {
   computed:{
     setDisabled () {
       
-      if(this.valuesLength <=1){
+      if (this.$store.state.values.length <=1) {
         return true;
       }
       return false

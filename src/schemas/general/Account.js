@@ -11,14 +11,15 @@ export default [
         name: "email",
         label: "Votre email",
         placeholder: "example@example.com",
-        validation: "required|email"
+        validation: "required|email",
+        validationName: "L'email"
     },
     {
         type: "password",
         name: "password",
         label: "Votre mot de passe",
         validation: "required",
-        validationName:"Le mot de passe"
+        validationName: "Le mot de passe"
     },
     {
         type: "password",
@@ -32,6 +33,7 @@ export default [
         name: "type_inscription",
         label: "S'inscrire en tant que",
         validation: 'required',
+        validationName: "Le type d'inscription",
         options: {
             client: "Client",
             interimaire: "Intérimaire",
