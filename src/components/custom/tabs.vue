@@ -5,7 +5,7 @@
         <li @click="activeTab = 0" :class="activeTab == 0 ? 'is-active' : ''">
           <slot name="title1"></slot>
         </li>
-        <li @click="activeTab = 1" :class="activeTab == 1 ? 'is-active' : '' || setDisabled ? 'disabled' :''">
+        <li @click="reloadValues <= 1 ? activeTab = 0 : activeTab = 1 " :class="activeTab == 1 ? 'is-active' : '' || setDisabled ? 'disabled' :''">
           <slot name="title2" ></slot>
         </li>
       </ul>
@@ -32,18 +32,25 @@ export default {
     type:Number
    },
   },
-  data: () => {
+  data () {
     return {
-      
+      tabActive:this.activeTab,
+      valuesLength:this.$store.state.values.length,
     }
+  },
+  methods:{
+      
   },
   computed:{
     setDisabled () {
-      let valuesLength = this.$store.state.values.length;
-      if(valuesLength <=1){
+      
+      if(this.valuesLength <=1){
         return true;
       }
       return false
+    },
+    reloadValues () {
+      return this.$store.state.values.length
     }
   }
 }
