@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// This thing here   vvv 
 import TableSearch from "@/components/tables/table"
 export default {
   name: 'interim',
