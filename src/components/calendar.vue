@@ -4,7 +4,7 @@
         <md-content >
             <md-tab>
                 <h3>Previsualisation des valeurs aux submits</h3>
-                <pre v-text="values" > </pre>
+                <pre v-text="values"></pre>
             </md-tab>
         </md-content>
     </div>
@@ -14,12 +14,14 @@
 import Schema from "../schemas/calendrier/calendar_form"
 export default {
     name: "calendar",
-    data () {
+    data: () => {
         return {
             values: {},
             schema: Schema,
             userSaved: false,
         }
+    },
+    methods: {
     },
     computed: {
         setLabel () {
@@ -27,10 +29,10 @@ export default {
             let jour = new Date(this.values.debut).getDay();
             let mois = new Date(this.values.debut).getMonth();
 
-            if(isNaN(nbJour) == false && isNaN(jour) == false && isNaN(mois) == false){
-                return "horraire pour le " + this.days[jour] + " " + nbJour + " " + this.months[mois] 
+            if ( !isNaN(nbJour) && !isNaN(jour) && !isNaN(mois) ) {
+                return "horraire pour le " + this.days[jour] + " " + nbJour + " " + this.months[mois]
             }
-            return ''
+            return " "
         }
     }
 

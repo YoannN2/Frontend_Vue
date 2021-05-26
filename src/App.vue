@@ -8,7 +8,6 @@
       <div class="container">
           <router-view/>
       </div>
-
     </div>
 
 
@@ -23,10 +22,11 @@
 </template>
 
 <script type="text/javascript">
+
 import navbar from "@/views/navbar"
   export default {
     components : {
-      navbar
+      navbar,
     }
   }
 </script>
