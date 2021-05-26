@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Schema from "../schemas/FormShema/Account"
+import Schema from "@/schemas/general/Account"
 export default {
   name: 'Account',
   data: () => ({

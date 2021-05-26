@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-content">
             <div class="content">
-                <Login />    
+                <Login />
             </div>
           </div>
         </div>
@@ -26,8 +26,8 @@
 
 <script>
 
-import Login from '@/components/login.vue'
-import Account from '../components/account.vue'
+import Login from '@/components/login'
+import Account from '@/components/account'
 
 export default {
   name: 'Home',

@@ -13,23 +13,23 @@
 </template>
 
 <script>
-import Schema from "../../../schemas/general/Account"
+import Schema from "@/schemas/general/Account"
 export default {
-    name:"FormAccount",
-    props:{
-        inscription:Function,
+    name: "FormAccount",
+    props: {
+        inscription: Function,
     },
-    data(){
-        return{
-            values:{},
-            schema:Schema,
+    data: () => {
+        return {
+            values: {},
+            schema: Schema,
         }
     },
-    methods:{
+    methods: {
 
-        inscription_type(){
-            this.$emit('inscription',this.values.type_inscription);
-            this.$store.commit('registered',this.values);
+        inscription_type () {
+            this.$emit('inscription', this.values.type_inscription)
+            this.$store.commit('registered', this.values)
         }
     }
 }
