@@ -16,12 +16,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  /*.md-progress-bar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-  }*/
   .login{
     margin: 0 auto;
     display: flex;

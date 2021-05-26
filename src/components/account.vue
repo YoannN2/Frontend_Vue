@@ -1,7 +1,12 @@
 <template>
-  <div>
-      <FormulateForm v-model="values" :schema="schema" />
-  </div>
+    <div>
+        <h2 class="subscribe_title">S'inscrire</h2>
+        <FormulateForm v-model="values" :schema="schema" />
+        <i class="modal-button" data-target="modal" aria-haspopup="true" @click="isActive = !isActive">
+            Déjà inscrit ? Cliquez-ici pour vous connecter.
+        </i>
+        <ModalLogin :isActive="isActive"/>
+    </div>
 </template>
 
 <script>
@@ -18,6 +23,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+  .subscribe_title{
+      text-align: center
+  }
+
+  .modal-button{
+    cursor:pointer
+  }
 
   .account {
     margin: 0 auto;
