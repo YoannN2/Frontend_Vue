@@ -1,40 +1,43 @@
 <template>
-  <div class="home ">
-    <div class="column is-one-quarter">
-      <div class="card">
-
-        <Login />
-
+  <div class="home">
+    <div class="columns">
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+                <Login />    
+            </div>
+          </div>
+        </div>
       </div>
-
+      <!-- <login/> -->
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+                <Account />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-
-
-    <!-- <login/> -->
   </div>
 </template>
 
 <script>
 
 import Login from '@/components/login.vue'
+import Account from '../components/account.vue'
 
 export default {
   name: 'Home',
   components: {
-   Login
+    Login,
+    Account
   }
 }
 </script>
 
 <style lang="css" scoped>
-  .md-content {
-    width: 200px;
-    height: 200px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 </style>

@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import Schema from "../schemas/general/login"
+import Schema from "../schemas/FormShema/Account"
 export default {
-  name: 'Login',
+  name: 'Account',
   data: () => ({
     schema:Schema,
     values:{},
@@ -22,7 +22,7 @@ export default {
     right: 0;
     left: 0;
   }*/
-  .login{
+  .account{
     margin: 0 auto;
     display: flex;
     flex-direction: column;

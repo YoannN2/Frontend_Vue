@@ -1,9 +1,10 @@
-export default[
+export default [
     {
         type: "username",
         name: "username",
         label: "Nom de compte",
         validation: "required",
+        validationName: "Identifiant"
     },
     {
         type: "email",
@@ -16,13 +17,15 @@ export default[
         type: "password",
         name: "password",
         label: "Votre mot de passe",
-        validation: "required"
+        validation: "required",
+        validationName:"Le mot de passe"
     },
     {
         type: "password",
         name: "password_confirm",
-        label: "Confirmez votre mote de passe",
-        validation: "required|confirm"
+        label: "Confirmez votre mot de passe",
+        validation: "required|confirm",
+        validationName: "La confirmation du mot de passe"
     },
     {
         type:"radio",
@@ -36,6 +39,6 @@ export default[
     },
     {
         type: "submit",
-        name: "Envoyez"
+        name: "Envoyer"
     }
 ]
