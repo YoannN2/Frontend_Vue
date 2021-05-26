@@ -13,19 +13,12 @@
 <script>
 import Schema from "../schemas/calendrier/calendar_form"
 export default {
-    name:"calendar",
-    data(){
-        return{
-            values:{},
-            schema:Schema,
-            userSaved:false,
-
-        }
-    },
-    methods:{
-        test(){
-            console.log("yolo je me répéte !")
-            
+    name: "calendar",
+    data () {
+        return {
+            values: {},
+            schema: Schema,
+            userSaved: false,
         }
     },
     computed: {

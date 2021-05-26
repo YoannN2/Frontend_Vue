@@ -14,20 +14,20 @@
 <script>
 import Schema from "../../../schemas/interimaire/Personnelle"
 export default {
-  name:"formPerso",
-  props:{
-    nextForm:Function,
+  name: "formPerso",
+  props: {
+    nextForm: Function,
   },
-  data(){
-    return{
-      values:{
-        isValid:false,
+  data () {
+    return {
+      values: {
+        isValid: false,
       },
-      schema:Schema
+      schema: Schema
     }
   },
   methods:{
-    registered(){
+    registered () {
       this.isValid = true;
       this.$store.commit('registered',this.values);
       this.$emit("nextForm",1);

@@ -3,12 +3,12 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export default new Vuex.Store ({
   state: {
-    values:[]
+    values: []
   },
   mutations: {
-    registered(state,val){
+    registered (state,val) {
       state.values.push(val);
     }
   },

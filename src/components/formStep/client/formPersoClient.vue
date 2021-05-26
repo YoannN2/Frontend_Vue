@@ -11,20 +11,20 @@
 <script>
 import Schema from "../../../schemas/client/clientAccount"
 export default {
-    name:"formPersoClient",
-    props:{
-        nextForm:Function,
+    name: "formPersoClient",
+    props: {
+        nextForm: Function,
     },
-    data(){
-        return{
-            schema:Schema,
-            values:{
-                isValid:false,
+    data () {
+        return {
+            schema: Schema,
+            values: {
+                isValid: false,
             },
         }
     },
-    methods:{
-        registered(){
+    methods: {
+        registered () {
             this.values.isValid = true;
             this.$store.commit('registered',this.values);
             this.$emit("nextForm",1);

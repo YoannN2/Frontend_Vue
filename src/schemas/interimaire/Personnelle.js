@@ -81,8 +81,8 @@ export default[
         "add-label": "Ajouter téléphone",
         "remove-label": "Supprimer téléphone",
         "add-label-class": "button",
-        value:[{}],
-        children:[
+        value: [{}],
+        children: [
             {
             type: "tel",
             name: "Telephone",
@@ -95,12 +95,12 @@ export default[
         type: "group",
         name: "adresse",
         label: "Adresse",
-        children:[
+        children: [
             {
-                type:"text",
-                name:"rue",
-                label:"Rue",
-                validation:"required|max:200,length"
+                type: "text",
+                name: "rue",
+                label: "Rue",
+                validation: "required|max:200,length"
             },
             {
                 type: "text",
