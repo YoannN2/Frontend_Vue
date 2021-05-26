@@ -1,4 +1,5 @@
 <template>
+
   <div class="">
     <div class="container">
       <FormAccount v-if="type_inscription == '' " @inscription="updateInscription($event)"/>
@@ -12,11 +13,9 @@
           <template slot="content2">
             <FormPro  @previousForm="previousForm($event)"/>
           </template>
-
         </Tabs>
-      
       </div>
-      
+
       <div v-else-if="type_inscription == 'client'">
         <Tabs :activeTab="activeTab">
           <a slot="title1">Personnelle</a>
@@ -31,6 +30,7 @@
       </div>
     </div>
   </div>
+
 </template>
 <script>
 //STEPPERS
@@ -68,6 +68,7 @@ export default {
       this.type_inscription = value;
     },
     nextForm (value) {
+      this.activeTab = 0;
       this.activeTab = value;
     },
     previousForm (value) {
