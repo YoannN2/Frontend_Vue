@@ -3,60 +3,38 @@
     <div class="container">
       <FormAccount v-if="type_inscription == '' " @inscription="updateInscription($event)"/>
       <div v-if="type_inscription == 'interimaire'">
-        <div class="">
-          <div class="tabs column is-two-thirds">
-            <ul>
-              <li @click="activeTab = 0" :class="activeTab == 0 ? 'is-active' : ''">
-                <a>Personnelle</a>
-              </li>
-              <li @click="activeTab = 1" :class="activeTab == 1 ? 'is-active' : ''">
-                <a >Professionnelle</a>
-              </li>
-            </ul>
-          </div>
-          <div class="content">
-            <div>
-              <div v-if="activeTab === 0" >
-                <FormPerso @nextForm="nextForm($event)" />
-              </div>
-              <div v-if="activeTab === 1">
-                <FormPro @previousForm="previousForm($event)" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Tabs :activeTab="activeTab">
+          <a slot="title1">Personnelle</a>
+          <a slot="title2">Professionnelle</a>
+          <template slot="content1">
+            <FormPerso @nextForm="nextForm($event)"/>
+          </template>
+          <template slot="content2">
+            <FormPro  @previousForm="previousForm($event)"/>
+          </template>
+
+        </Tabs>
+      
       </div>
       
       <div v-else-if="type_inscription == 'client'">
-        <div class="">
-          <div class="tabs column is-two-thirds">
-            <ul>
-              <li @click="activeTab = 0" :class="activeTab == 0 ? 'is-active' : ''">
-                <a>Personnelle</a>
-              </li>
-              <li @click="activeTab = 1" :class="activeTab == 1 ? 'is-active' : ''">
-                <a >Professionnelle</a>
-              </li>
-            </ul>
-          </div>
-          <div class="content">
-            <div>
-              <div v-if="activeTab === 0">
-                <FormClient @nextForm="nextForm($event)"/>
-              </div>
-              <div v-if="activeTab === 1">
-                <FormSociete @previousForm="previousForm($event)" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Tabs :activeTab="activeTab">
+          <a slot="title1">Personnelle</a>
+          <a slot="title2">Professionnelle</a>
+          <template slot="content1">
+            <FormClient @nextForm="nextForm($event)"/>
+          </template>
+          <template slot="content2" >
+            <FormSociete @previousForm="previousForm($event)" />
+          </template>
+        </Tabs>
       </div>
     </div>
   </div>
 </template>
 <script>
 //STEPPERS
-//import tabs from "@/components/custom/tabs"
+import Tabs from "@/components/custom/tabs"
 
 //ACCOUNT
 import FormAccount from '@/components/formStep/general/formAccount'
@@ -71,6 +49,7 @@ import FormSociete from "@/components/formStep/client/formSociete"
 export default {
   name: 'Test',
   components: {
+    Tabs,
     FormAccount,
     FormPerso,
     FormPro,
@@ -90,8 +69,9 @@ export default {
     },
     nextForm(value){
       this.activeTab = value;
+      console.log(this.$store.state.values)
     },
-    previousForm(value){
+    previousForm (value) {
       this.activeTab = value;
     }
   }

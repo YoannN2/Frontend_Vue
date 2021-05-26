@@ -2,15 +2,21 @@
   <div class="">
     <div class="tabs column is-two-thirds">
       <ul>
-        <li v-for="tab in pages" :key="tab.index" @click="activeTab = tab.index" :class="activeTab == tab.index ? 'is-active' : ''" >
-          <a @click="test(tab.content)">{{tab.title}}</a>
+        <li @click="activeTab = 0" :class="activeTab == 0 ? 'is-active' : ''">
+          <slot name="title1"></slot>
+        </li>
+        <li @click="activeTab = 1" :class="activeTab == 1 ? 'is-active' : '' || setDisabled ? 'disabled' :''">
+          <slot name="title2" ></slot>
         </li>
       </ul>
     </div>
     <div class="content">
-      <div v-for="tab in pages" :key="tab.index">
-        <div v-if="activeTab === tab.index">
-          <component :is="tab.content"></component>
+      <div>
+        <div v-if="activeTab === 0" >
+          <slot name="content1"  ></slot>
+        </div>
+        <div v-if="activeTab === 1">
+          <slot name="content2" ></slot>
         </div>
       </div>
     </div>
@@ -21,28 +27,38 @@
 <script>
 export default {
   name: "tabs",
-  props: {
-    pages: {
-      type: Array,
-      required: true,
-    },
-    defaultTab: {
-      type: Number,
-      default: 0,
-    },
+  props:{
+   activeTab: {
+    type:Number
+   },
   },
   data: () => {
     return {
-      activeTab: 0,
+      
     }
   },
-  methods: {
-    test(val){
-      console.log(val)
+  computed:{
+    setDisabled () {
+      let valuesLength = this.$store.state.values.length;
+      if(valuesLength <=1){
+        return true;
+      }
+      return false
     }
   }
 }
 </script>
 
 <style lang="css" scoped>
+.disabled{
+  opacity: 0.5;
+}
+.disabled a {
+  text-decoration: none;
+  pointer-events: none;
+  cursor:not-allowed;
+}
+.disabled a:hover{
+  border: none;
+}
 </style>
