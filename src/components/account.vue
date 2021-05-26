@@ -8,21 +8,18 @@
 import Schema from "@/schemas/general/Account"
 export default {
   name: 'Account',
-  data: () => ({
-    schema:Schema,
-    values:{},
-  }),
+  data: () => {
+    return {
+      schema: Schema,
+      values: {},
+    }
+  },
 }
 </script>
 
 <style lang="css" scoped>
-  /*.md-progress-bar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-  }*/
-  .account{
+
+  .account {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
