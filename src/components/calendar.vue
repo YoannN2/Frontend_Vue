@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Schema from "../schemas/calendar_form"
+import Schema from "../schemas/calendrier/calendar_form"
 export default {
     name:"calendar",
     data(){

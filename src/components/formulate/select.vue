@@ -8,7 +8,7 @@
       :data-placeholder-selected="placeholderSelected"
       >
         <option v-for="option in options" :key="option.id" :value="option.value" :selected="option.selected" :disabled="option.disabled">
-          {{ option.label}}
+          {{ option.label }}
         </option>
       </select>
     </div>
@@ -40,5 +40,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
 </style>

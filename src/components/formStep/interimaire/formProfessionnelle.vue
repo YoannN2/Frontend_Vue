@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Schema from "../../schemas/FormShema/Professionnelle"
+import Schema from "../../../schemas/interimaire/Professionnelle"
 export default {
   name:"Pro",
   data(){

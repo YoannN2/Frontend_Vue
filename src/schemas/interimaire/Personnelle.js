@@ -95,10 +95,10 @@ export default[
         label: "Adresse",
         children:[
             {
-                type: "text",
-                name: "adresse",
-                label: "Votre adresse",
-                validation: "required|max:200,length"
+                type:"text",
+                name:"rue",
+                label:"Rue",
+                validation:"required|max:200,length"
             },
             {
                 type: "text",

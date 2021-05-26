@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Schema from "../schemas/FormShema/login"
+import Schema from "../schemas/general/login"
 export default {
   name: 'Login',
   data: () => ({
