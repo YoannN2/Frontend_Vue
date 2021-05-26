@@ -6,7 +6,7 @@
             {{ tag }}
             <i class="delete" @click="removeTag(index)"></i>
         </span>
-        <input class="tag-input" type="text" v-model="tag" @keyup.enter="addTag" @blur="context.blurHandler"/>
+        <input class="tag-input" type="text" v-model="tag" @keyup.enter.self="addTag" @blur="context.blurHandler"/>
 
     </div>
 </template>

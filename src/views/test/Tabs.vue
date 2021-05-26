@@ -3,17 +3,60 @@
     <div class="container">
       <FormAccount v-if="type_inscription == '' " @inscription="updateInscription($event)"/>
       <div v-if="type_inscription == 'interimaire'">
-        <tabs :pages="TabsInterim" :defaultTab="0"/>
+        <div class="">
+          <div class="tabs column is-two-thirds">
+            <ul>
+              <li @click="activeTab = 0" :class="activeTab == 0 ? 'is-active' : ''">
+                <a>Personnelle</a>
+              </li>
+              <li @click="activeTab = 1" :class="activeTab == 1 ? 'is-active' : ''">
+                <a >Professionnelle</a>
+              </li>
+            </ul>
+          </div>
+          <div class="content">
+            <div>
+              <div v-if="activeTab === 0" >
+                <FormPerso @nextForm="nextForm($event)" />
+              </div>
+              <div v-if="activeTab === 1">
+                <FormPro @previousForm="previousForm($event)" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      
       <div v-else-if="type_inscription == 'client'">
-        <tabs :pages="TabsClient" :defaultTab="0"/>
+        <div class="">
+          <div class="tabs column is-two-thirds">
+            <ul>
+              <li @click="activeTab = 0" :class="activeTab == 0 ? 'is-active' : ''">
+                <a>Personnelle</a>
+              </li>
+              <li @click="activeTab = 1" :class="activeTab == 1 ? 'is-active' : ''">
+                <a >Professionnelle</a>
+              </li>
+            </ul>
+          </div>
+          <div class="content">
+            <div>
+              <div v-if="activeTab === 0">
+                <FormClient @nextForm="nextForm($event)"/>
+              </div>
+              <div v-if="activeTab === 1">
+                <FormSociete @previousForm="previousForm($event)" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
 //STEPPERS
-import tabs from "@/components/custom/tabs"
+//import tabs from "@/components/custom/tabs"
 
 //ACCOUNT
 import FormAccount from '@/components/formStep/general/formAccount'
@@ -28,41 +71,28 @@ import FormSociete from "@/components/formStep/client/formSociete"
 export default {
   name: 'Test',
   components: {
-    tabs,
-    FormAccount
+    FormAccount,
+    FormPerso,
+    FormPro,
+    FormClient,
+    FormSociete
+
   },
   data: () => {
     return {
-      TabsInterim: [
-        {
-          index: 0,
-          title: "Personnelle",
-          content: FormPerso,
-        },
-        {
-          index: 1,
-          title: "Professionnelle",
-          content: FormPro,
-        },
-      ],
-      TabsClient:[
-        {
-          index:0,
-          title:"Personnelle",
-          content:FormClient
-        },
-        {
-          index:1,
-          title:"Societe",
-          content:FormSociete
-        }
-      ],
       type_inscription:"",
+      activeTab:0,
     }
   },
   methods: {
     updateInscription(value){
       this.type_inscription = value;
+    },
+    nextForm(value){
+      this.activeTab = value;
+    },
+    previousForm(value){
+      this.activeTab = value;
     }
   }
 }

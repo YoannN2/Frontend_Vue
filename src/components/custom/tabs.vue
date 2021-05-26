@@ -10,7 +10,7 @@
     <div class="content">
       <div v-for="tab in pages" :key="tab.index">
         <div v-if="activeTab === tab.index">
-          <component  @submit="test('je suis appelé la dedans !!!')" :is="tab.content"></component>
+          <component :is="tab.content"></component>
         </div>
       </div>
     </div>
