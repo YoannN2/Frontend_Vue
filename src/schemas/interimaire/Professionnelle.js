@@ -45,7 +45,6 @@ export default[
         type: "radio",
         name: "contrat_rechercher",
         label: "Contrat recherché",
-        value: [],
         options: {
             interim: "Interim",
             recrutement: "Recrutement",
@@ -81,6 +80,8 @@ export default[
     },
     {
         type: "submit",
-        name: "Envoyez"
-    }
+        name: "Envoyez",
+        label:"Envoyez"
+    },
+  
 ]

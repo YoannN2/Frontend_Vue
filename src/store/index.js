@@ -5,11 +5,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    valide:false,
+    values:[]
   },
   mutations: {
-    done(){
-      return this.state.valide = true;
+    registered(state,val){
+      state.values.push(val);
     }
   },
   actions: {

@@ -82,12 +82,14 @@ export default[
         "remove-label": "Supprimer téléphone",
         "add-label-class": "button",
         value:[{}],
-        children:[{
+        children:[
+            {
             type: "tel",
             name: "Telephone",
             placeholder: "(+687)",
             validation: "number|max:6,length"
-        }]
+            }
+        ]
     },
     {
         type: "group",
@@ -122,7 +124,8 @@ export default[
     },
     {
         type: "submit",
-        name: "Envoyez"
+        name: "Envoyez",
+        label:"Envoyez"
     }
 
 ]
