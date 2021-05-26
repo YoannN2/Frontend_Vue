@@ -59,17 +59,16 @@ export default {
   },
   data: () => {
     return {
-      type_inscription:"",
-      activeTab:0,
+      type_inscription: "",
+      activeTab: 0,
     }
   },
   methods: {
-    updateInscription(value){
+    updateInscription (value) {
       this.type_inscription = value;
     },
-    nextForm(value){
+    nextForm (value) {
       this.activeTab = value;
-      console.log(this.$store.state.values)
     },
     previousForm (value) {
       this.activeTab = value;

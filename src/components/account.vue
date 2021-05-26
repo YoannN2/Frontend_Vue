@@ -9,8 +9,8 @@ import Schema from "@/schemas/general/Account"
 export default {
   name: 'Account',
   data: () => ({
-    schema:Schema,
-    values:{},
+    schema: Schema,
+    values: {},
   }),
 }
 </script>
