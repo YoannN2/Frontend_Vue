@@ -20,14 +20,14 @@ export default {
         required: true,
         },
     },
-    data(){
-        return{
+    data () {
+        return {
             tags: [],
             tag: ""
         }
     },
     methods:{
-        addTag(){
+        addTag () {
             let newTag = this.tag.trim();
 
             if (newTag != "" && !this.tags.includes(newTag)) {
@@ -36,7 +36,7 @@ export default {
                 this.tag = "";
             }
         },
-        removeTag(index){
+        removeTag (index) {
             this.tags.splice(index,1);
             this.context.model = this.tags;
         }

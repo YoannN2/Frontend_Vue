@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// This thing here   vvv 
 import TableSearch from "@/components/tables/table"
 export default {
   name: 'interim',
@@ -13,8 +14,8 @@ export default {
   },
   data: () => {
     return {
-
-      users: [{
+      users: [
+        {
           id: 1,
           name: "Shawna Dubbin",
           email: "sdubbin0@geocities.com",

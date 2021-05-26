@@ -81,23 +81,25 @@ export default[
         "add-label": "Ajouter téléphone",
         "remove-label": "Supprimer téléphone",
         "add-label-class": "button",
-        value:[{}],
-        children:[{
+        value: [{}],
+        children: [
+            {
             type: "tel",
             name: "Telephone",
             placeholder: "(+687)",
             validation: "number|max:6,length"
-        }]
+            }
+        ]
     },
     {
         type: "group",
         name: "adresse",
         label: "Adresse",
-        children:[
+        children: [
             {
                 type: "text",
-                name: "adresse",
-                label: "Votre adresse",
+                name: "rue",
+                label: "Rue",
                 validation: "required|max:200,length"
             },
             {
@@ -122,7 +124,8 @@ export default[
     },
     {
         type: "submit",
-        name: "Envoyez"
+        name: "Envoyez",
+        label:"Envoyez"
     }
 
 ]

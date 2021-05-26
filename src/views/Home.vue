@@ -25,8 +25,7 @@
 </template>
 
 <script>
-
-import Account from '../components/account.vue'
+import Account from '@/components/account'
 
 export default {
   name: 'Home',

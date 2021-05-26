@@ -10,19 +10,15 @@
 </template>
 
 <script>
-import Schema from "../schemas/FormShema/Account"
-import ModalLogin from '@/views/modal-login.vue'
-
+import Schema from "@/schemas/general/Account"
 export default {
   name: 'Account',
-    data: () => ({
-    schema:Schema,
-    values:{},
-    isActive: false,
-  }),
-  components: {
-    ModalLogin
-  }
+  data: () => {
+    return {
+      schema: Schema,
+      values: {},
+    }
+  },
 }
 </script>
 
@@ -31,8 +27,14 @@ export default {
   .subscribe_title{
       text-align: center
   }
+
   .modal-button{
     cursor:pointer
   }
 
+  .account {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
 </style>

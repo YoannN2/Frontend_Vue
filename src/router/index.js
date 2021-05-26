@@ -35,8 +35,8 @@ const routes = [
     component: Skills
   },
   {
-    path:"/calendrier",
-    name:"calendrier",
+    path: "/calendrier",
+    name: "calendrier",
     component: Calendrier
   }
 ]
