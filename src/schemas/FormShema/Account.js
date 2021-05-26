@@ -1,9 +1,10 @@
-export default[
+export default [
     {
         type: "username",
         name: "username",
         label: "Nom de compte",
         validation: "required",
+        validationName: "Identifiant"
     },
     {
         type: "email",
@@ -24,10 +25,10 @@ export default[
         name: "password_confirm",
         label: "Confirmez votre mot de passe",
         validation: "required|confirm",
-        validationName:"Le mot de passe"
+        validationName: "La confirmation du mot de passe"
     },
     {
         type: "submit",
-        name: "Envoyez"
+        name: "Envoyer"
     }
 ]
