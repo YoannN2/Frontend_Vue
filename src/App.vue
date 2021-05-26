@@ -8,7 +8,6 @@
       <div class="container">
           <router-view/>
       </div>
-
     </div>
 
 
@@ -23,12 +22,11 @@
 </template>
 
 <script type="text/javascript">
-import ModalLogin from './views/modal-login.vue'
+
 import navbar from "@/views/navbar"
   export default {
     components : {
       navbar,
-      ModalLogin
     }
   }
 </script>

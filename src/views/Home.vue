@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <ModalLogin/>
+
     <div class="columns">
       <div class="background column is-6 is-offset-1">
         <h2 class="interim_title">Intérimaire</h2>
@@ -10,6 +12,8 @@
           <i class="icon-presentation far fa-question-circle"><span class="txt-presentation"> Accéder à vos informations de missions.</span></i>
         </p>
       </div>
+
+
       <!-- <background/> -->
       <div class="column is-4">
         <div class="card">
@@ -27,10 +31,11 @@
 <script>
 import Account from '@/components/account'
 
+import ModalLogin from '@/views/modal-login.vue'
 export default {
   name: 'Home',
   components: {
-    Account
+    Account, ModalLogin,
   }
 }
 </script>
