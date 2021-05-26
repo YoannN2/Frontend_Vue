@@ -7,19 +7,13 @@
 <script>
 import Calendrier from "../components/calendar"
 export default {
-    name:"showCalendar",
-    components:{
+    name: "showCalendar",
+    components: {
         Calendrier
     },
     data(){
         return{
-            values:{},
-
-        }
-    },
-    methods:{
-        tester(){
-            console.log("je suis dans le group !")
+            values: {},
         }
     },
 }

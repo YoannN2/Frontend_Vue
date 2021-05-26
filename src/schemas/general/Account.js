@@ -28,13 +28,13 @@ export default [
         validationName: "La confirmation du mot de passe"
     },
     {
-        type:"radio",
-        name:"type_inscription",
-        label:"S'inscrire en tant que",
-        validation:'required',
-        options:{
-            client:"Client",
-            interimaire:"Intérimaire",
+        type: "radio",
+        name: "type_inscription",
+        label: "S'inscrire en tant que",
+        validation: 'required',
+        options: {
+            client: "Client",
+            interimaire: "Intérimaire",
         }
     },
     {

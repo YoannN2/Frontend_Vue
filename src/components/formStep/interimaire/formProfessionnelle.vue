@@ -12,16 +12,16 @@
 import Schema from "../../../schemas/interimaire/Professionnelle"
 export default {
   name:"Pro",
-  data(){
-    return{
-      values:{
-        isValid:false,
+  data () {
+    return {
+      values: {
+        isValid: false,
       },
-      schema:Schema
+      schema: Schema
     }
   },
   methods:{
-    registered(){
+    registered () {
       this.isValid = true;
       this.$store.commit('registered',this.values);
       alert("Vous avez été enregistré avec succés !")

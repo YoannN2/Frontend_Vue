@@ -10,17 +10,17 @@
 <script>
 import Schema from "../../../schemas/client/societe"
 export default {
-    name:"FormSociete",
-    data(){
-        return{
-            values:{
-                isValid:false,
+    name: "FormSociete",
+    data () {
+        return {
+            values: {
+                isValid: false,
             },
-            schema:Schema,
+            schema: Schema,
         }
     },
-    methods:{
-        registered(){
+    methods: {
+        registered () {
             this.isValid = true;
             this.$store.commit("registered",this.values);
         }
