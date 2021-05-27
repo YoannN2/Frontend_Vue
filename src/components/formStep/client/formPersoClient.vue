@@ -23,9 +23,9 @@ export default {
     },
     methods: {
         registered () {
-            this.values.isValid = true;
-            this.$store.commit('registered',this.values);
-            this.$emit("nextForm",1);
+            this.values.isValid = true; // Renvoie true pour garder une trace de la validation
+            this.$store.commit('registered',this.values);   // stocke les données du formulaire dans le store
+            this.$emit("nextForm",1);   //permet de passer a la prochaine step avec la fonction passer en props et renvoie la valeur 1 (index)
         }
     }
 }

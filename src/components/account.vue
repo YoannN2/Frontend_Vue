@@ -1,7 +1,7 @@
 <template>
     <div>
       <h2 class="subscribe_title">S'inscrire</h2>
-      <FormAccount @submit="registered"/>
+      <FormAccount />
       <i class="modal-button" data-target="modal" aria-haspopup="true" @click="showLogin">
         Déjà inscrit ? Cliquez-ici pour vous connecter.
       </i>
@@ -14,7 +14,7 @@ import ModalLogin from "@/views/modal-login"
 export default {
   name: 'Account',
   components:{
-    FormAccount,
+    FormAccount, //La logique est écrite dans le composant lui même
     ModalLogin
   },
   data () {
@@ -24,16 +24,11 @@ export default {
     }
   },
   methods:{
-    registered () {
-      //ne marche pas FAIRE AUTREMENT ou pas
-      this.$emit('registered',this.values);
-      console.log(this.$route)
-    },
     showLogin () {
-      return this.isActive = true;
+      return this.isActive = true;  //Permet d'ouvrir la modal
     },
     updateActive (value) {
-      this.isActive = value;
+      this.isActive = value;  //Permet de mettre a jour la valeur isActive passer en props a la modalLogin
     },
   }
 }

@@ -33,14 +33,14 @@ export default {
   },
   props: {
     isActive: {
-      required: true,
+      required: true, //La props est passé dans la vue navbar et le composant account
       type: Boolean,
     }
   },
   methods:{
     closeModal () {
       this.isActive = false;
-      this.$emit('updateActive',false);
+      this.$emit('updateActive',false); //émet au parent la valeur false pour toggle la modal
     }
   }
 }
