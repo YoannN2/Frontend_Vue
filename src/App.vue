@@ -1,16 +1,12 @@
 <template>
   <div id="app">
-
     <!-- NAVBAR -->
     <navbar/>
-
     <div class="section">
       <div class="container">
           <router-view/>
       </div>
     </div>
-
-
     <footer class="footer">
       <div class="content has-text-centered">
         <p>

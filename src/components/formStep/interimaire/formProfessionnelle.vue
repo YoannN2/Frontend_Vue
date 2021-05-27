@@ -3,7 +3,8 @@
     <FormulateForm v-model="values" :schema="schema" @submit="registered" />
 
     <div class="card-content">
-      <pre v-text="values" class="md-elevation-3"></pre>
+      <h3>Valeur du formulaire complet step Pro (interimaire) </h3>
+      <pre v-text="this.$store.state.values" class="md-elevation-3"></pre>
     </div>
   </div>
 </template>
@@ -22,8 +23,8 @@ export default {
   },
   methods:{
     registered () {
-      this.isValid = true;
-      this.$store.commit('registered',this.values);
+      this.values.isValid = true; // Renvoie true pour permettre de garder la validation
+      this.$store.commit('registered',this.values); //stocke les données du form dans le store
       alert("Vous avez été enregistré avec succés !")
     }
   }

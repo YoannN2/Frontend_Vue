@@ -3,10 +3,10 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import interimaire from '@/views/interimaire.vue'
 import Form from '@/views/test/Form.vue'
-import Tabs from '@/views/test/Tabs.vue'
 import Calendrier from "@/views/Calendar.vue"
 import Skills from "@/views/test/Skills.vue"
-
+import SignUp from "@/views/SignUp"
+import Tabs from '@/views/test/Tabs'
 Vue.use(VueRouter)
 
 const routes = [
@@ -25,19 +25,24 @@ const routes = [
     component: Form
   },
   {
-    path: '/test/tabs',
-    name: 'Tabs',
-    component: Tabs
-  },
-  {
     path: '/test/skills',
     name: "Skills",
     component: Skills
   },
   {
+    path:"/test/Tabs",
+    name:'Tabs',
+    component:Tabs
+  },
+  {
     path: "/calendrier",
     name: "calendrier",
     component: Calendrier
+  },
+  {
+    path:"/SignUp",
+    name:"signUp",
+    component:SignUp
   }
 ]
 

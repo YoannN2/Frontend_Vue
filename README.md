@@ -1,6 +1,6 @@
 # Frontend Vue
 
-Hello world
+Hello world Oubliez pas pull la main !! MERCI D'AVANCE !!
 
 ## Project setup
 ```

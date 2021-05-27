@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class=" column is-half">
-            <FormulateForm @submit="inscription_type" v-model="values" :schema="schema" />
+            <FormulateForm @submit="register" v-model="values" :schema="schema" />
         </div>
         
         <div class="card-content">
@@ -23,14 +23,9 @@ export default {
         }
     },
     methods: {
-        inscription_type () {
-            //this.$emit('inscription', this.values.type_inscription)
-            if(this.$store.state.values.length == 0 ){
-                this.$store.commit('registered', this.values)
-            }
-            else{
-                alert('vous avez deja rempli le formulaire')
-            }
+        register () {
+            this.$store.commit('registered', this.values);
+            console.log(this.$router.push('/test/Tabs'))
         }
     }
 }

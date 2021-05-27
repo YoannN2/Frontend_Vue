@@ -1,78 +1,31 @@
 <template>
+  <div>
+      <div v-if="userType == 'cli'">
+        <TabsCli  />
 
-  <div class="">
-    <div class="container">
-      <div v-if="type_inscription == 'interimaire'">
-        <Tabs :activeTab="activeTab">
-          <a slot="title1">Personnelle</a>
-          <a slot="title2">Professionnelle</a>
-          <template slot="content1">
-            <FormPerso @nextForm="nextForm($event)"/>
-          </template>
-          <template slot="content2">
-            <FormPro  @previousForm="previousForm($event)"/>
-          </template>
-        </Tabs>
       </div>
+      <div>
+        <TabsInt  v-if="userType == 'int'" />
 
-      <div v-else-if="type_inscription == 'client'">
-        <Tabs :activeTab="activeTab">
-          <a slot="title1">Personnelle</a>
-          <a slot="title2">Professionnelle</a>
-          <template slot="content1">
-            <FormClient @nextForm="nextForm($event)"/>
-          </template>
-          <template slot="content2" >
-            <FormSociete @previousForm="previousForm($event)" />
-          </template>
-        </Tabs>
       </div>
-    </div>
   </div>
-
 </template>
+
 <script>
-//STEPPERS
-import Tabs from "@/components/custom/tabs"
-
-//ACCOUNT
-//import FormAccount from '@/components/formStep/general/formAccount'
-
-//INTERIMAIRE
-import FormPerso from "@/components/formStep/interimaire/formPersonnelle"
-import FormPro from "@/components/formStep/interimaire/formProfessionnelle"
-
-//CLIENT
-import FormClient from '@/components/formStep/client/formPersoClient'
-import FormSociete from "@/components/formStep/client/formSociete"
+import TabsCli from '@/components/custom/tabsCli'
+import TabsInt from "@/components/custom/tabsInt"
 export default {
-  name: 'Test',
-  components: {
-    Tabs,
-    FormPerso,
-    FormPro,
-    FormClient,
-    FormSociete
+    name:"Tabs",
+    components: {
+        TabsCli,
+        TabsInt
+    },
+    data () {
+        return {
+            userType: this.$store.state.userType,
+        }
+    },
 
-  },
-  data: () => {
-    return {
-      type_inscription: "",
-      activeTab: 0,
-    }
-  },
-  methods: {
-    updateInscription (value) {
-      this.type_inscription = value;
-    },
-    nextForm (value) {
-      this.activeTab = 0;
-      this.activeTab = value;
-    },
-    previousForm (value) {
-      this.activeTab = value;
-    }
-  }
 }
 </script>
 
