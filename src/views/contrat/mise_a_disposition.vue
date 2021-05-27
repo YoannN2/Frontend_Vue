@@ -1,5 +1,5 @@
 <template>
-  <page size="A4">
+  <div class="page">
     <div class="about">
       <head>
         <meta charset="utf-8">
@@ -9,9 +9,8 @@
           <form>
             <div class="columns">
               <div class="column is-two-fifths has-text-centered">
-                <img src="../views/1557045489287.jpg" />
               </div>
-              
+
               <div class="column has-text-centered"><br>
                 <p><strong> {{agence.agenceInterim}} </strong></p><br>
                 <p> {{agence.adresseAgence}}</p>
@@ -21,46 +20,17 @@
 
               <div class="columns">
                 <div class="column has-text-centered">
-                  <p><strong>CONTRAT DE MISSION / {{mission.refContrat}}</strong></p>
+                  <p><strong>CONTRAT DE MISE A DISPOSITION / {{mission.refContrat}}</strong></p>
                 </div>
               </div>
           </form>
         </div><hr class="tiret"><br>
-      
+
         <div id="sujet" class="columns">
-          
+
           <div class="column is-half">
-            
+
             <div>
-              <h1> <strong> INTERIMAIRE </strong></h1>
-            </div><hr id="hrInterimaire"><br>
-
-            <div class="columns">
-              <div id="nom_prenom" class="column is-two-fifth has-text-left"> Nom et Prénom : </div>
-              <div class="column has-text-left">{{interimaire.nom_prenom}}</div>
-            </div>
-
-            <div class="columns">
-              <div  class="column is-two-fifth has-text-left"> Date de naissance : </div>
-              <div class="column has-text-left">{{interimaire.dateNaissance}}</div>
-            </div>
-
-            <div class="columns">
-              <div  class="column is-two-fifth has-text-left"> N° Cafat : </div>
-              <div class="column has-text-left">{{interimaire.nCafat}}</div>
-            </div>
-
-            <div class="columns">
-              <div class="column is-one-quarter has-text-left"> Adresse : </div>
-              <div class="column has-text-left">{{interimaire.adresseInterimaire}}</div>
-            </div>
-          </div>
-
-          <hr class="hrVertical">
-          
-          <div class="column is-half">
-            
-            <div >
               <h1><strong> CLIENT </strong></h1>
             </div><hr id="hrClient"><br>
 
@@ -85,8 +55,40 @@
             </div>
 
             <div class="columns">
+              <div class="column is-two-left has-text-left"> Téléphone : </div>
+              <div class="column has-text-left">{{client.telephoneClient}}</div>
+            </div>
+
+            <div class="columns">
               <div class="column is-one-quarter has-text-left"> Adresse : </div>
               <div class="column has-text-left">{{client.adresseClient}}</div>
+            </div>
+          </div>
+
+          <div class="column is-half">
+
+            <div>
+              <h1><strong> INTERIMAIRE </strong></h1>
+            </div><hr id="hrInterimaire"><br>
+
+            <div class="columns">
+              <div class="column is-two-fifth has-text-left"> Nom et Prénom : </div>
+              <div class="column has-text-left">{{interimaire.nom_prenom}}</div>
+            </div>
+
+            <div class="columns">
+              <div class="column is-two-fifth has-text-left"> Date de naissance : </div>
+              <div class="column has-text-left">{{interimaire.dateNaissance}}</div>
+            </div>
+
+            <div class="columns">
+              <div class="column is-two-fifth has-text-left"> N° Cafat : </div>
+              <div class="column has-text-left">{{interimaire.nCafat}}</div>
+            </div>
+
+            <div class="columns">
+              <div class="column is-one-quarter has-text-left"> Adresse : </div>
+              <div class="column has-text-left">{{interimaire.adresseInterimaire}}</div>
             </div>
           </div>
         </div>
@@ -94,7 +96,7 @@
       <div class="is-full">
 
         <div id="mission" class="columns">
-          
+
           <div class="column is-half">
 
             <div class="intitulé">
@@ -138,7 +140,7 @@
               <div class="column has-text-right">{{mission.nbJoursEssai}}</div>
             </div>
           </div>
-          
+
           <div class="column is-half">
 
             <div class="intitulé">
@@ -166,13 +168,18 @@
             </div>
 
             <div class="columns">
-              <div class="column is-two-left has-text-left"> Congés Payés : </div>
+              <div id="congesPayes" class="column is-two-left has-text-left"> Congés Payés : </div>
               <div class="column has-text-right">{{mission.congesPayes}}%</div>
             </div>
 
             <div class="columns">
               <div class="column is-three-fifths has-text-left"> Heures supplémentaires : </div>
               <div class="column has-text-right">{{mission.heureSupp}}</div>
+            </div>
+
+            <div class="columns">
+              <div class="column is-three-fifths has-text-left"> Condition de Règlement : </div>
+              <div class="column has-text-right">{{mission.conditionReglement}}</div>
             </div>
           </div>
         </div><hr class="tiret"><br>
@@ -183,28 +190,28 @@
           <div id="when" class="column has-text-left"><p>le         </p></div>
         </div><hr id="hrSign">
 
-        <div class="columns" id="signature">
-          <div class="column is-half"><p>Signature du Salarié</p></div>
+        <div class="columns" id="ccSignature">
+          <div class="column is-half"><p>Cachet et Signature de l'utilisateur</p></div>
           <div class="column"><p>Cachet et Signature de PARTNERS INTERIM</p></div>
         </div>
 
         <hr class="tiret">
-  
+
         <div class="is-full has-text-centered" id="agenceID">
           <p>{{agence.agenceID}}</p>
         </div>
-        
+
       </div>
     </div>
-  </page>
+  </div>
 </template>
 
 
 <script>
 
 export default {
-  data: ()=>{
-    return{
+  data: () => {
+    return {
       agence: {
         agenceInterim: "PARTNERS INTERIM",
         adresseAgence: "224 rue Iekawe - PK6 - Centre commercial Belle Vie",
@@ -219,10 +226,11 @@ export default {
       },
       client: {
         raisonSociale: "",
-        adresseClient: "",
+        adresseClient: "zdddddddddddddddd dddddddddddd ddddddddddddd dddddddd ddddddddddd ddddddddddd ddddddddddd dddddddddd dddddddddd dddddddd",
         representePar: "",
         personneDemander: "",
         lieuActivite: "",
+        telephoneClient: "",
       },
       mission: {
         refContrat: "",
@@ -240,42 +248,42 @@ export default {
         baseSalaire: "",
         primePreca: "",
         congesPayes: "",
+        conditionReglement: ""
       }
     }
   }
 }
 </script>
-<style>
+
+<style scoped>
+
 /* ajout des br pour créer des sauts de ligne plutot que de styliser en marge partout dans le css */
 
-/* background de distinction */
-body {
-  background: rgb(41, 41, 41); 
-  position: relative;
-}
+/* background de distinction avec le  format A4 */
+
 
 /*Dimension A4 */
-page {
-  background: white;
+.page {
+  background: rgb(255, 255, 255);
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
 }
-page[size="A4"] {  
+.page[size="A4"] {
   width: 21cm;
-  height: 29.7cm; 
+  height: 29.7cm;
 }
-page[size="A4"][layout="portrait"] {
+.page[size="A4"][layout="portrait"] {
   width: 29.7cm;
-  height: 21cm;  
+  height: 21cm;
 }
 
 /* Marge sur les DIV du sujet et des Details de Mission, plus espace entre les textes */
 #sujet, #mission {
   margin-left: 0px;
   margin-right: 0px;
-  line-height: 1;
+  line-height: 0.9;
 }
 
 /* Ligne sur la mention Lu et approuvé et Fait a ''Nouméa'' le ''25/05/2025'' */
@@ -284,21 +292,20 @@ page[size="A4"][layout="portrait"] {
 }
 
 /* Marge sur signature et cachet */
-#signature {
+#ccSignature {
   line-height: 2.8;
-  margin-bottom: 135px;
+  margin-bottom: 90px;
 }
 
 /* taille de la police de L'identité de l'entreprise dans le footer */
 #agenceID {
   font-size: 65%;
-
 }
 
 /* Dimension de l'image */
-img {
+.img {
   width: 130px;
-  height: 140px;
+  height: 120px;
 }
 
 /* Liste de style css des différents HR du contrat */
@@ -324,9 +331,9 @@ img {
 }
 /* hr qui des détails et remunération */
 .hrMission {
-  background-color:rgb(122, 113, 113);
+  background-color: rgb(122, 113, 113);
   height: 2.5px;
-  color:rgb(121, 113, 113);
+  color: rgb(121, 113, 113);
   margin: auto;
   width: 100%;
   border: none;
@@ -335,19 +342,20 @@ img {
 /* hr qui divise signature et les mentions */
 #hrSign {
   height: 1.5px;
-  color:rgb(36, 36, 36);
+  color: rgb(36, 36, 36);
   margin: auto;
-  background-color:rgb(36, 36, 36);
-  width: 80%;
-  border: none; 
+  background-color: rgb(36, 36, 36);
+  width: 85%;
+  border: none;
 }
 /* hr de séparation full */
 .tiret {
   height: 2.1px;
-  color:rgb(36, 36, 36);
+  color: rgb(36, 36, 36);
   margin: auto;
-  background-color:rgb(36, 36, 36);
+  background-color: rgb(36, 36, 36);
   width: 100%;
-  border: none; 
+  border: none;
 }
+
 </style>
