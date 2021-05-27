@@ -5,7 +5,6 @@
         <i class="modal-button" data-target="modal" aria-haspopup="true" @click="isActive = !isActive">
             Déjà inscrit ? Cliquez-ici pour vous connecter.
         </i>
-        <ModalLogin :isActive="isActive"/>
     </div>
 </template>
 
@@ -19,6 +18,8 @@ export default {
       values: {},
     }
   },
+  computed: {
+  }
 }
 </script>
 
@@ -29,7 +30,7 @@ export default {
   }
 
   .modal-button{
-    cursor:pointer
+    cursor: pointer
   }
 
   .account {
