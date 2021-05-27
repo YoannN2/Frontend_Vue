@@ -2,11 +2,10 @@
     <div>
       <h2 class="subscribe_title">S'inscrire</h2>
       <FormAccount @submit="registered"/>
-      <i class="modal-button" data-target="modal" aria-haspopup="true" @click="isActive = !isActive">
+      <i class="modal-button" data-target="modal" aria-haspopup="true" @click="showLogin">
         Déjà inscrit ? Cliquez-ici pour vous connecter.
       </i>
       <ModalLogin :isActive="isActive" @updateActive="updateActive"  />
-           
     </div>
 </template>
 <script>
@@ -26,6 +25,7 @@ export default {
   },
   methods:{
     registered () {
+      //ne marche pas FAIRE AUTREMENT ou pas
       this.$emit('registered',this.values);
       console.log(this.$route)
     },
@@ -35,18 +35,17 @@ export default {
     updateActive (value) {
       this.isActive = value;
     },
-  }
 }
 </script>
 
 <style lang="css" scoped>
 
-  .subscribe_title{
-      text-align: center
+  .subscribe_title {
+    text-align: center;
   }
 
-  .modal-button{
-    cursor:pointer
+  .modal-button {
+    cursor: pointer;
   }
 
   .account {
