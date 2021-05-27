@@ -2,7 +2,7 @@ export default [
     {
         type: "date",
         label: "Periode du",
-        name :"debut"
+        name : "debut"
     },
     {
         type: "date",

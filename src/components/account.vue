@@ -25,12 +25,12 @@ export default {
 
 <style lang="css" scoped>
 
-  .subscribe_title{
-      text-align: center
+  .subscribe_title {
+    text-align: center;
   }
 
-  .modal-button{
-    cursor: pointer
+  .modal-button {
+    cursor: pointer;
   }
 
   .account {

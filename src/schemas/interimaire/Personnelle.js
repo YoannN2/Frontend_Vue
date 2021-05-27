@@ -2,21 +2,23 @@ export default[
 
     {
         type: "text",
-        label: "Nom d'usage Nom marital",
+        label: "Nom d'usage / Nom marital",
         name: "Nom",
         validation: "required|max:30,length",
+        validationName: "Le nom"
     },
     {
         type: "text",
         label: "Nom de jeune fille",
         name: "Nom_jeune_fille",
-        validation: "max:30,length",
+        validation: "max:30,length|optional",
     },
     {
         type: "text",
         name: "prenom",
         label: "Prénom",
         validation: "required|max:30,length",
+        validationName: "Le prénom"
     },
     {
         type: "group",
@@ -27,48 +29,55 @@ export default[
         "remove-label": "enlever le prenom",
         "add-label-class": "button",
         validation: "optional|max:4,length",
-        value:[{}],
-        children:[{
+        validationName: "Les autres prénoms",
+        value: [{}],
+        children: [{
             type: "text",
             name: "autre prenom",
             placeholder: "Autre prenom",
-            validation: "optional|max:30"
+            validation: "optional|max:30,length",
+            validationName: "Le prénom"
         }]
     },
     {
         type: "radio",
         name: "sexe",
         label: "Genre",
-        options:{
+        validation: "required",
+        validationName: "Le genre",
+        options: {
             homme: "Homme",
             femme: "Femme",
             nonBinaire: "Non-binaire"
         },
-        validation: "required|"
     },
     {
         type: "date",
         name: "date_Naissance",
         label: "Date de Naissance",
-        validation: "before|required"
+        validation: "before|required",
+        validationName: "La date de naissance"
     },
     {
         type: "text",
         name: "Lieu_Naissance",
         label: "Lieu de naissance",
         validation: "required|max:30,length",
+        validationName: "Le lieu de naissance"
     },
     {
         type: "number",
         name: "cafat",
         label: "Numéro Cafat",
         validation: "required|max:7,length",
+        validationName: "Le numéro CAFAT"
     },
     {
         type: "checkbox",
         name: "Allocation_familliale",
         label: "Allocation familliale",
-        options:{
+        validation: "optional",
+        options: {
             oui: "oui"
         }
     },
@@ -77,17 +86,19 @@ export default[
         name: "Téléphone",
         label: "Votre téléphone",
         repeatable: true,
-        validation: "min:1,length",
+        validation: "min:1,length|required",
+        validationName: "Un numéro de téléphone",
         "add-label": "Ajouter téléphone",
         "remove-label": "Supprimer téléphone",
         "add-label-class": "button",
         value: [{}],
         children: [
             {
-            type: "tel",
-            name: "Telephone",
-            placeholder: "(+687)",
-            validation: "number|max:6,length"
+                type: "tel",
+                name: "Telephone",
+                placeholder: "(+687)",
+                validation: "number|max:6,length",
+                validationName: "Le téléphone"
             }
         ]
     },
@@ -100,7 +111,8 @@ export default[
                 type: "text",
                 name: "rue",
                 label: "Rue",
-                validation: "required|max:200,length"
+                validation: "required|max:200,length",
+                validationName:"La rue"
             },
             {
                 type: "text",
@@ -112,20 +124,22 @@ export default[
                 type: "text",
                 name: "ville",
                 label: "Ville",
-                validation: "required|max:200,length"
+                validation: "required|max:200,length",
+                validationName:"La ville"
             },
             {
                 type: "number",
                 name: "code_postal",
                 label: "Code Postal",
-                validation: "number|max:5,length|min:1000,value|max:99000,value",
+                validation: "number|max:5,length|required",
+                validationName:"Le code postal"
             }
         ]
     },
     {
         type: "submit",
         name: "Envoyez",
-        label:"Envoyez"
+        label: "Envoyez"
     }
 
 ]

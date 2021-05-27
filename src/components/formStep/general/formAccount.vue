@@ -2,13 +2,10 @@
     <div>
         <div class=" column is-half">
             <FormulateForm @submit="inscription_type" v-model="values" :schema="schema" />
-
         </div>
-
         <div class="card-content">
-            <pre v-text="values" class="md-elevation-3"></pre>
+            <pre v-text="this.$store.state.values" class="md-elevation-3"></pre>
         </div>
-
     </div>
 </template>
 

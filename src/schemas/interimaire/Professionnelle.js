@@ -3,6 +3,8 @@ export default[
         type: "checkbox",
         name: "mobilite",
         label: "Mobilite",
+        validation: "required",
+        validationName: "La mobilité",
         options: {
             noumea: "Nouméa",
             "Grand Noumea": "Grand Nouméa",
@@ -15,6 +17,8 @@ export default[
         type: "checkbox",
         name: "Transport",
         label: "Transport",
+        validation: "required",
+        validationName: "Le transport",
         options: {
             Vehicule: "Véhicule Personnel",
             "Famille/Ami": "Famille/Ami",
@@ -31,13 +35,15 @@ export default[
         "add-label-class": "button",
         value: [{}],
         repeatable: true,
-        validation: "max: 4,length",
+        validation: "max:4,value|required",
+        validationName: "Postes",
         children: [
             {
                 type: "text",
                 name: "poste",
                 label: "Poste",
-                validation: "max: 50,length"
+                validation: "max:50,length|required",
+                validationName: "Le poste"
             }
         ]
     },
@@ -45,6 +51,8 @@ export default[
         type: "radio",
         name: "contrat_rechercher",
         label: "Contrat recherché",
+        validation: "required",
+        validationName: "Le type de contrat recherché",
         options: {
             interim: "Interim",
             recrutement: "Recrutement",
@@ -55,18 +63,21 @@ export default[
         type: "tag",
         name: "competences",
         label: "competence",
+        validation: "min:1,value"
     },
     {
         type: "tag",
         name: "skills",
         label: "skills",
+        validation: "min:1,value"
     },
     {
         type: "group",
         name: "Fichiers",
         label: "Vos documents",
         help: "Accepte les formats png,jpeg et pdf only",
-        validation: "max:3,length|mime:application/pdf|required",
+        validation: "max:3,length|required",
+        validationName: "Les fichiers",
         repeatable: true,
         "add-label": "Ajouter fichier",
         "add-label-class": "button",
@@ -75,13 +86,14 @@ export default[
             type: "file",
             name: "fichier",
             label: "Upload",
-            validation: ""
+            validation: "mime:jpeg|mime:png|mime:pdf",
+            validationName: "Le fichier"
         }]
     },
     {
         type: "submit",
         name: "Envoyez",
-        label:"Envoyez"
+        label: "Envoyez"
     },
   
 ]
