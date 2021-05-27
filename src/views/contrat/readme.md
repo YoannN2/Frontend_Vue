@@ -3,7 +3,7 @@ Voici la liste Concernant la loi du code du travail sur le motif de recours et a
 Article Lp. 124-5
 Il ne peut être fait appel aux salariés d'une entreprise de travail temporaire que pour l'exécution de tâches temporaires dénommées « missions », et seulement dans les cas suivants :
 
-1° Remplacement d'un salarié en cas d'absence temporaire ou de suspension de son contrat de travail, sauf si la durée de celles’ci initialement portée à la connaissance de l'employeur est supérieure à six mois ;
+1° Remplacement d'un salarié en cas d'absence temporaire ou de suspension de son contrat de travail, sauf si la durée de celles'ci initialement portée à la connaissance de l'employeur est supérieure à six mois ;
 
 2° Attente de l'entrée en service effectif du salarié appelé à remplacer un salarié dont le contrat à durée indéterminée a pris fin ;
 
