@@ -23,19 +23,9 @@ export default {
         registered () {
             this.isValid = true;
             this.$store.commit("registered",this.values);
+            alert('enregistré avec succés !!');  
         },
-        changeValues () {
-            return this.values = this.$store.state.values[1];
-        }
     },
-    computed: {
-        saveValue () {
-            if(this.isValid){
-               this.changeValues();
-            }
-            return false
-        },
-    }
 }
 </script>
 

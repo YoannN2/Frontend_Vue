@@ -23,10 +23,14 @@ export default {
         }
     },
     methods: {
-
         inscription_type () {
-            this.$emit('inscription', this.values.type_inscription)
-            this.$store.commit('registered', this.values)
+            //this.$emit('inscription', this.values.type_inscription)
+            if(this.$store.state.values.length == 0 ){
+                this.$store.commit('registered', this.values)
+            }
+            else{
+                alert('vous avez deja rempli le formulaire')
+            }
         }
     }
 }

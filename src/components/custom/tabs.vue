@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="">
+    <FormAccount @submit="registered" />
     <div class="tabs column is-two-thirds">
       <ul>
         <li @click="activeTab = 0" :class="{'is-active' :activeTab == 0}">
@@ -46,7 +47,6 @@ export default {
   },
   computed:{
     setDisabled () {
-      
       if (this.$store.state.values.length <=1) {
         return true;
       }
