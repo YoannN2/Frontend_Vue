@@ -22,8 +22,6 @@
           <i class="icon-presentation far fa-question-circle"><span class="txt-presentation"> Accéder à vos informations de missions.</span></i>
         </p>
       </div>
-
-
       <!-- <background/> -->
       <div class="column is-4">
         <div class="card">

@@ -1,25 +1,40 @@
 <template>
     <div>
-        <h2 class="subscribe_title">S'inscrire</h2>
-        <FormulateForm v-model="values" :schema="schema" />
-        <i class="modal-button" data-target="modal" aria-haspopup="true" @click="isActive = !isActive">
-            Déjà inscrit ? Cliquez-ici pour vous connecter.
-        </i>
+      <h2 class="subscribe_title">S'inscrire</h2>
+      <FormAccount @submit="registered"/>
+      <i class="modal-button" data-target="modal" aria-haspopup="true" @click="showLogin">
+        Déjà inscrit ? Cliquez-ici pour vous connecter.
+      </i>
+      <ModalLogin :isActive="isActive" @updateActive="updateActive"  />
     </div>
 </template>
-
 <script>
-import Schema from "@/schemas/general/Account"
+import FormAccount from "@/components/formStep/general/formAccount"
+import ModalLogin from "@/views/modal-login"
 export default {
   name: 'Account',
-  data: () => {
+  components:{
+    FormAccount,
+    ModalLogin
+  },
+  data () {
     return {
-      schema: Schema,
       values: {},
+      isActive:false,
     }
   },
-  computed: {
-  }
+  methods:{
+    registered () {
+      //ne marche pas FAIRE AUTREMENT ou pas
+      this.$emit('registered',this.values);
+      console.log(this.$route)
+    },
+    showLogin () {
+      return this.isActive = true;
+    },
+    updateActive (value) {
+      this.isActive = value;
+    },
 }
 </script>
 

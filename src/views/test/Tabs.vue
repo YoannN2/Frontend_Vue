@@ -2,7 +2,6 @@
 
   <div class="">
     <div class="container">
-      <FormAccount v-if="type_inscription == '' " @inscription="updateInscription($event)"/>
       <div v-if="type_inscription == 'interimaire'">
         <Tabs :activeTab="activeTab">
           <a slot="title1">Personnelle</a>
@@ -37,7 +36,7 @@
 import Tabs from "@/components/custom/tabs"
 
 //ACCOUNT
-import FormAccount from '@/components/formStep/general/formAccount'
+//import FormAccount from '@/components/formStep/general/formAccount'
 
 //INTERIMAIRE
 import FormPerso from "@/components/formStep/interimaire/formPersonnelle"
@@ -50,7 +49,6 @@ export default {
   name: 'Test',
   components: {
     Tabs,
-    FormAccount,
     FormPerso,
     FormPro,
     FormClient,

@@ -6,7 +6,6 @@
         </div>
   </div>
 </template>
-
 <script>
 import Schema from "../../../schemas/client/clientAccount"
 export default {
