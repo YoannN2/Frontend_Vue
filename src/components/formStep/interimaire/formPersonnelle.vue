@@ -6,7 +6,7 @@
 
     </div>
     <div class="card-content">
-      <h3>Valeur des formulaires</h3>
+      <h3>Valeur du formulaire complet step Perso (interimaire)</h3>
         <pre v-text="this.$store.state.values" class="md-elevation-3"></pre>
     </div>
   </div>

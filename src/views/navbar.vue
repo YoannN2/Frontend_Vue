@@ -20,7 +20,7 @@
               <router-link class="navbar-item" to="/test/form">
                 All Form Inputs
               </router-link>
-              <router-link class="navbar-item" to="/test/tabs">
+              <router-link class="navbar-item" to="/test/Tabs">
                 Tabs
               </router-link>
               <router-link class="navbar-item" to="/test/skills">
