@@ -22,7 +22,7 @@ export default {
   },
   methods:{
     registered () {
-      this.isValid = true;
+      this.values.isValid = true;
       this.$store.commit('registered',this.values);
       alert("Vous avez été enregistré avec succés !")
     }

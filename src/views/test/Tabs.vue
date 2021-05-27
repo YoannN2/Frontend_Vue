@@ -2,7 +2,8 @@
 
   <div class="">
     <div class="container">
-      <div v-if="type_inscription == 'interimaire'">
+      <FormAccount v-if="type_inscription == ''" @inscription="updateInscription" />
+      <div v-if="type_inscription == 'int'">
         <Tabs :activeTab="activeTab">
           <a slot="title1">Personnelle</a>
           <a slot="title2">Professionnelle</a>
@@ -15,7 +16,7 @@
         </Tabs>
       </div>
 
-      <div v-else-if="type_inscription == 'client'">
+      <div v-else-if="type_inscription == 'cli'">
         <Tabs :activeTab="activeTab">
           <a slot="title1">Personnelle</a>
           <a slot="title2">Professionnelle</a>
@@ -36,7 +37,7 @@
 import Tabs from "@/components/custom/tabs"
 
 //ACCOUNT
-//import FormAccount from '@/components/formStep/general/formAccount'
+import FormAccount from '@/components/formStep/general/formAccount'
 
 //INTERIMAIRE
 import FormPerso from "@/components/formStep/interimaire/formPersonnelle"
@@ -49,6 +50,7 @@ export default {
   name: 'Test',
   components: {
     Tabs,
+    FormAccount,
     FormPerso,
     FormPro,
     FormClient,

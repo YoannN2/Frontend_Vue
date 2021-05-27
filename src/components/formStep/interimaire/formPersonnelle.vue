@@ -28,7 +28,7 @@ export default {
   },
   methods:{
     registered () {
-      this.isValid = true;
+      this.values.isValid = true;
       this.$store.commit('registered',this.values);
       this.$emit("nextForm",1);
     }

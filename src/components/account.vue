@@ -35,6 +35,7 @@ export default {
     updateActive (value) {
       this.isActive = value;
     },
+  }
 }
 </script>
 
