@@ -2,6 +2,7 @@
   <div>
         <FormulateForm :schema="schema" v-model="values" @submit="registered" />
         <div class="card-content">
+            <h2>Les valeurs des formulaires a la step actuelle</h2>
             <pre v-text="this.$store.state.values" class="md-elevation-3"></pre>
         </div>
   </div>
@@ -21,21 +22,11 @@ export default {
     },
     methods: {
         registered () {
-            this.isValid = true;
-            this.$store.commit("registered",this.values);
+            this.values.isValid = true;
+            this.$store.commit("registered",this.values);   // stocke la valeur dans le store
+            alert('enregistré avec succés !!');  
         },
-        changeValues () {
-            return this.values = this.$store.state.values[1];
-        }
     },
-    computed: {
-        saveValue () {
-            if(this.isValid){
-               this.changeValues();
-            }
-            return false
-        },
-    }
 }
 </script>
 

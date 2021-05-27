@@ -53,17 +53,38 @@
           <a class="button is-primary">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light">
+          <button @click="showLogin" class="button is-light">
             Log in
-          </a>
+          </button>
         </div>
       </div>
+    </div>
+    <div v-if="isActive">
+      <ModalLogin :isActive="isActive" @updateActive="updateActive" />
     </div>
   </nav>
 </template>
 
 <script>
+import ModalLogin from "@/views/modal-login"
 export default {
+  name:"navbar",
+  components: {
+    ModalLogin
+  },
+  data () {
+    return {
+      isActive:false,
+    }
+  },
+  methods: {
+    showLogin () {
+      return this.isActive = true;
+    },
+    updateActive (value) {
+      this.isActive = value;
+    },
+  }
 }
 </script>
 

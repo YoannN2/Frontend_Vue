@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <ModalLogin/>
-
     <div class="columns">
+      <!-- le v-if ne marche pas -->
       <div v-if="usertype == 'int'" class="background column is-6 is-offset-1">
         <h2 class="white interim_title title">Intérimaire</h2>
         <p class="white interim_subtitle subtitle">Votre espace pour</p>
@@ -12,7 +11,7 @@
           <i class="icon-presentation far fa-question-circle"><span class="txt-presentation"> Accéder à vos informations de missions.</span></i>
         </p>
       </div>
-
+      <!-- le v-if ne marche pas -->
       <div v-if="usertype == 'cli'" class="background column is-6 is-offset-1">
         <h2 class="white interim_title title">Client</h2>
         <p class="white interim_subtitle subtitle">Votre espace pour</p>
@@ -22,8 +21,6 @@
           <i class="icon-presentation far fa-question-circle"><span class="txt-presentation"> Accéder à vos informations de missions.</span></i>
         </p>
       </div>
-
-
       <!-- <background/> -->
       <div class="column is-4">
         <div class="card">
@@ -40,12 +37,10 @@
 
 <script>
 import Account from '@/components/account'
-
-import ModalLogin from '@/views/modal-login.vue'
 export default {
   name: 'Home',
   components: {
-    Account, ModalLogin,
+    Account
   },
   data: () => {
     return {

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="modal" :class="isActive ? 'is-active' : ''">
-          <div class="modal-background" @click="isActive = false">></div>
+          <div class="modal-background" @click="closeModal">></div>
               <div class="modal-content">
                   <div class="column">
                     <div class="card">
@@ -13,7 +13,7 @@
                     </div>
                   </div>
               </div>
-              <i class="modal-close is-large" aria-label="close"  @click="isActive = false"></i>
+              <i class="modal-close is-large" aria-label="close"  @click="closeModal"></i>
         </div>
     </div>
 </template>
@@ -23,20 +23,26 @@ import Login from '../components/login.vue'
 
 
 export default {
-  name: 'modallogin',
-    data: () => ({
-    values: {},
-    isActive: false,
-  }),
+  name: 'modalLogin',
+    data () {
+      return{
+      }
+    },
   components: {
     Login
   },
-props: {
+  props: {
     isActive: {
-        required: true,
-        type: Boolean,
-        }
-    },
+      required: true, //La props est passé dans la vue navbar et le composant account
+      type: Boolean,
+    }
+  },
+  methods:{
+    closeModal () {
+      this.isActive = false;
+      this.$emit('updateActive',false); //émet au parent la valeur false pour toggle la modal
+    }
+  }
 }
 </script>
 
