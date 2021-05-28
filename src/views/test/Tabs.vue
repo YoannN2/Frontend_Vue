@@ -1,7 +1,7 @@
 <template>
   <div>
-      <div v-if="userType == 'cli'">
-        <TabsCli  />
+      <div >
+        <TabsCli v-if="userType == 'cli'" />
 
       </div>
       <div>
