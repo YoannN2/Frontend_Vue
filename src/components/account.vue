@@ -1,35 +1,47 @@
 <template>
     <div>
-        <h2 class="subscribe_title">S'inscrire</h2>
-        <FormulateForm v-model="values" :schema="schema" />
-        <i class="modal-button" data-target="modal" aria-haspopup="true" @click="isActive = !isActive">
-            Déjà inscrit ? Cliquez-ici pour vous connecter.
-        </i>
-        <ModalLogin :isActive="isActive"/>
+      <h2 class="subscribe_title">S'inscrire</h2>
+      <FormAccount />
+      <i class="modal-button" data-target="modal" aria-haspopup="true" @click="showLogin">
+        Déjà inscrit ? Cliquez-ici pour vous connecter.
+      </i>
+      <ModalLogin :isActive="isActive" @updateActive="updateActive"  />
     </div>
 </template>
-
 <script>
-import Schema from "@/schemas/general/Account"
+import FormAccount from "@/components/formStep/general/formAccount"
+import ModalLogin from "@/views/modal-login"
 export default {
   name: 'Account',
-  data: () => {
+  components:{
+    FormAccount, //La logique est écrite dans le composant lui même
+    ModalLogin
+  },
+  data () {
     return {
-      schema: Schema,
       values: {},
+      isActive:false,
     }
   },
+  methods:{
+    showLogin () {
+      return this.isActive = true;  //Permet d'ouvrir la modal
+    },
+    updateActive (value) {
+      this.isActive = value;  //Permet de mettre a jour la valeur isActive passer en props a la modalLogin
+    },
+  }
 }
 </script>
 
 <style lang="css" scoped>
 
-  .subscribe_title{
-      text-align: center
+  .subscribe_title {
+    text-align: center;
   }
 
-  .modal-button{
-    cursor:pointer
+  .modal-button {
+    cursor: pointer;
   }
 
   .account {

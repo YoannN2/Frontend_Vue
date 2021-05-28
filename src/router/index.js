@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
-import interimaire from '@/views/interimaire.vue'
-import Form from '@/views/test/Form.vue'
-import Tabs from '@/views/test/Tabs.vue'
-import Calendrier from "@/views/Calendar.vue"
-import Skills from "@/views/test/Skills.vue"
+import Home from '@/views/Home'
+import interimaire from '@/views/interimaire'
+import Form from '@/views/test/Form'
+import Tabs from '@/views/test/Tabs'
+import Calendrier from "@/views/Calendar"
+import Skills from "@/views/test/Skills"
+import CM from "@/views/contrat/mission"
+import CMaD from "@/views/contrat/mise_a_disposition"
 
 Vue.use(VueRouter)
 
@@ -38,6 +40,16 @@ const routes = [
     path: "/calendrier",
     name: "calendrier",
     component: Calendrier
+  },
+  {
+    path: '/contrat/mission',
+    name: "ContratMission",
+    component: CM
+  },
+  {
+    path: "/contrat/mise_a_disposition",
+    name: "ContratMaD",
+    component: CMaD
   }
 ]
 

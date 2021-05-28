@@ -1,19 +1,26 @@
 <template>
   <div class="home">
-    <ModalLogin/>
-
     <div class="columns">
-      <div class="background column is-6 is-offset-1">
-        <h2 class="interim_title">Intérimaire</h2>
-        <p class="interim_subtitle">Votre espace pour</p>
+      <!-- le v-if ne marche pas -->
+      <div v-if="usertype == 'int'" class="background column is-6 is-offset-1">
+        <h2 class="white interim_title title">Intérimaire</h2>
+        <p class="white interim_subtitle subtitle">Votre espace pour</p>
         <p>
           <i class="icon-presentation fas fa-user-edit"><span class="txt-presentation"> Gérer votre profil de chercheur d'emploi.</span></i>
           <i class="icon-presentation fas fa-clipboard-list"><span class="txt-presentation"> Accéder à vos contrats de travail et bulletin de paie.</span></i>
           <i class="icon-presentation far fa-question-circle"><span class="txt-presentation"> Accéder à vos informations de missions.</span></i>
         </p>
       </div>
-
-
+      <!-- le v-if ne marche pas -->
+      <div v-if="usertype == 'cli'" class="background column is-6 is-offset-1">
+        <h2 class="white interim_title title">Client</h2>
+        <p class="white interim_subtitle subtitle">Votre espace pour</p>
+        <p>
+          <i class="icon-presentation fas fa-user-edit"><span class="txt-presentation"> Gérer votre profil de chercheur d'emploi.</span></i>
+          <i class="icon-presentation fas fa-clipboard-list"><span class="txt-presentation"> Accéder à vos contrats de travail et bulletin de paie.</span></i>
+          <i class="icon-presentation far fa-question-circle"><span class="txt-presentation"> Accéder à vos informations de missions.</span></i>
+        </p>
+      </div>
       <!-- <background/> -->
       <div class="column is-4">
         <div class="card">
@@ -30,17 +37,23 @@
 
 <script>
 import Account from '@/components/account'
-
-import ModalLogin from '@/views/modal-login.vue'
 export default {
   name: 'Home',
   components: {
-    Account, ModalLogin,
+    Account
+  },
+  data: () => {
+    return {
+      usertype: "int",
+    }
   }
 }
 </script>
 
 <style lang="css" scoped>
+.white {
+  color: white;
+}
 .background{
   background-color: #F26522;
   color: #f1f2f2;

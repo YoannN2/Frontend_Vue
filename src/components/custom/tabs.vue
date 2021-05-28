@@ -46,7 +46,6 @@ export default {
   },
   computed:{
     setDisabled () {
-      
       if (this.$store.state.values.length <=1) {
         return true;
       }
