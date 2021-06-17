@@ -2,7 +2,7 @@
   <div>
         <FormulateForm :schema="schema" v-model="values" @submit="registered" />
         <div class="card-content">
-            <h2>Les valeurs des formulaires a la step actuelle</h2>
+            <h2>Les valeurs du formulaire complet step societe (client) </h2>
             <pre v-text="this.$store.state.values" class="md-elevation-3"></pre>
         </div>
   </div>

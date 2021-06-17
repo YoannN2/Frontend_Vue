@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home'
-import interimaire from '@/views/interimaire'
-import Form from '@/views/test/Form'
+
+import Home from '@/views/Home.vue'
+import interimaire from '@/views/interimaire.vue'
+import Form from '@/views/test/Form.vue'
+import Calendrier from "@/views/Calendar.vue"
+import Skills from "@/views/test/Skills.vue"
+import SignUp from "@/views/SignUp"
 import Tabs from '@/views/test/Tabs'
-import Calendrier from "@/views/Calendar"
-import Skills from "@/views/test/Skills"
 import CM from "@/views/contrat/mission"
 import CMaD from "@/views/contrat/mise_a_disposition"
 
@@ -27,19 +29,25 @@ const routes = [
     component: Form
   },
   {
-    path: '/test/tabs',
-    name: 'Tabs',
-    component: Tabs
-  },
-  {
     path: '/test/skills',
     name: "Skills",
     component: Skills
   },
   {
+    path:"/test/Tabs",
+    name:'Tabs',
+    component:Tabs
+  },
+  {
     path: "/calendrier",
     name: "calendrier",
     component: Calendrier
+  },
+  {
+
+    path:"/SignUp",
+    name:"signUp",
+    component:SignUp
   },
   {
     path: '/contrat/mission',

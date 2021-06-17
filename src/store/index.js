@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store ({
   state: {
-    values: []
+    values: [],
+    userType:'' // défini le type d'utilisateur (phase de developpement)
   },
   mutations: {
     registered (state,val) {
       state.values.push(val);
+    },
+    type_inscription (state,val) {
+      state.userType = val;
     }
   },
   actions: {
